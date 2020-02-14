@@ -37,9 +37,11 @@
                 RetrieveData("Fees-Essential", sql, dtgEssential)
 
                 If dtgEssential.Rows.Count > 0 Then
+                    Dim totEss As Decimal
                     For i As Integer = 0 To dtgEssential.Rows.Count - 1
-                        txtTotEssential.Text = dtgEssential.Rows(i).Cells(1).Value
+                        totEss += CDec(dtgEssential.Rows(i).Cells(1).Value)
                     Next
+                    txtTotEssential.Text = totEss.ToString("N")
                 Else
                     txtTotEssential.Text = "0"
                 End If
@@ -48,9 +50,11 @@
                 RetrieveData("Fees-Essential", sql, dtgNonEssential)
 
                 If dtgNonEssential.Rows.Count > 0 Then
+                    Dim totNonEss As Decimal
                     For i As Integer = 0 To dtgNonEssential.Rows.Count - 1
-                        txtTotNonEssential.Text = dtgNonEssential.Rows(i).Cells(1).Value
+                        totNonEss += CDec(dtgNonEssential.Rows(i).Cells(1).Value)
                     Next
+                    txtTotNonEssential.Text = totNonEss
                 Else
                     txtTotNonEssential.Text = "0"
                 End If

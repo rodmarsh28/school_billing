@@ -1,7 +1,8 @@
 ﻿Imports MySql.Data.MySqlClient
 Module connection
     Public Function strConnection() As MySqlConnection
-        Return New MySqlConnection("server=" & My.Settings.mServer & ";user id=" & My.Settings.mUser & ";password=" & My.Settings.mPass & ";database=" & My.Settings.mDBname & ";sslMode=none")
+        'Return New MySqlConnection("server=" & My.Settings.mServer & ";user id=" & My.Settings.mUser & ";password=" & My.Settings.mPass & ";database=" & My.Settings.mDBname & ";sslMode=none")
+        Return New MySqlConnection("server=localhost;user id=root;password=1234;database=enrollment;sslMode=none")
     End Function
     Public con As MySqlConnection = strConnection()
     Public Function isConnected(server As String, db As String, user As String, pass As String) As Boolean

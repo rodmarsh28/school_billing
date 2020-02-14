@@ -8,6 +8,7 @@
 
     Private Sub frmDBConnection_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
+            MsgBox(My.Settings.mServer + My.Settings.mDBname + My.Settings.mUser + My.Settings.mPass)
             txtServer.Text = My.Settings.mServer
             txtDB.Text = My.Settings.mDBname
             txtUser.Text = My.Settings.mUser
