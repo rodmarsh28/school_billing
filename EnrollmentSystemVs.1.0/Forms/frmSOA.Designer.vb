@@ -27,8 +27,6 @@ Partial Class frmSOA
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.txtSearch = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.cbosy = New System.Windows.Forms.ComboBox()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -37,7 +35,6 @@ Partial Class frmSOA
         '
         Me.CrystalReportViewer1.ActiveViewIndex = -1
         Me.CrystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.CrystalReportViewer1.CachedPageNumberPerDoc = 10
         Me.CrystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default
         Me.CrystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.CrystalReportViewer1.Location = New System.Drawing.Point(145, 0)
@@ -64,20 +61,18 @@ Partial Class frmSOA
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.Label3)
-        Me.GroupBox1.Controls.Add(Me.cbosy)
         Me.GroupBox1.Controls.Add(Me.Button1)
         Me.GroupBox1.Controls.Add(Me.txtSearch)
         Me.GroupBox1.Location = New System.Drawing.Point(6, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(136, 128)
+        Me.GroupBox1.Size = New System.Drawing.Size(136, 102)
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Search for Student ID"
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(9, 88)
+        Me.Button1.Location = New System.Drawing.Point(3, 62)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(124, 23)
         Me.Button1.TabIndex = 1
@@ -88,28 +83,10 @@ Partial Class frmSOA
         '
         Me.txtSearch.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
         Me.txtSearch.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
-        Me.txtSearch.Location = New System.Drawing.Point(12, 62)
+        Me.txtSearch.Location = New System.Drawing.Point(6, 36)
         Me.txtSearch.Name = "txtSearch"
         Me.txtSearch.Size = New System.Drawing.Size(118, 20)
         Me.txtSearch.TabIndex = 0
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(9, 19)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(21, 13)
-        Me.Label3.TabIndex = 6
-        Me.Label3.Text = "SY"
-        '
-        'cbosy
-        '
-        Me.cbosy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbosy.FormattingEnabled = True
-        Me.cbosy.Location = New System.Drawing.Point(12, 35)
-        Me.cbosy.Name = "cbosy"
-        Me.cbosy.Size = New System.Drawing.Size(118, 21)
-        Me.cbosy.TabIndex = 5
         '
         'frmSOA
         '
@@ -131,6 +108,4 @@ Partial Class frmSOA
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents Button1 As Button
     Friend WithEvents txtSearch As TextBox
-    Friend WithEvents Label3 As Label
-    Friend WithEvents cbosy As ComboBox
 End Class

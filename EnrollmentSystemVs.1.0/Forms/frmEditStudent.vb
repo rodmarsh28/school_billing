@@ -57,6 +57,4 @@
     Private Sub btnCLose_Click(sender As Object, e As EventArgs) Handles btnCLose.Click
         Me.Close()
     End Sub
-
-
 End Class

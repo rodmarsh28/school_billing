@@ -1,5 +1,4 @@
 ﻿Public Class frmEnrollment
-    Dim DGV As New DataGridView
     Private Sub frmEnrollment_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         sql = "SELECT CONCAT( `LNAME`,', ', `FNAME`,' ', `MNAME`) FROM `tblstudent`"
         txtAutoComplete(sql, txtsearch)
@@ -7,13 +6,12 @@
         sql = "SELECT `IDNO`, CONCAT( `LNAME`,', ', `FNAME`,' ', `MNAME`) as 'FULL NAME'  FROM `tblstudent`"
         fillGrid(sql, dtgList)
 
-
         Call btnClear_Click(sender, e)
 
     End Sub
 
     Private Sub txtsearch_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtsearch.TextChanged
-        sql = "Select `IDNO`, CONCAT( `LNAME`,', ', `FNAME`,' ', `MNAME`) as 'FULL NAME'  FROM `tblstudent` WHERE CONCAT( `LNAME`,', ', `FNAME`,' ', `MNAME`) LIKE '%" & txtsearch.Text & "%' OR LNAME LIKE '%" & txtsearch.Text & "%' OR FNAME LIKE '%" & txtsearch.Text & "%'"
+        sql = "SELECT `IDNO`, CONCAT( `LNAME`,', ', `FNAME`,' ', `MNAME`) as 'FULL NAME'  FROM `tblstudent` WHERE CONCAT( `LNAME`,', ', `FNAME`,' ', `MNAME`) LIKE '%" & txtsearch.Text & "%' OR LNAME LIKE '%" & txtsearch.Text & "%' OR FNAME LIKE '%" & txtsearch.Text & "%'"
         fillGrid(sql, dtgList)
     End Sub
 
@@ -155,15 +153,6 @@
                 Next
 
 
-                sql = "select esentialID as fID,'Essential' as Type ,fees from tblessentialfees where yearlevel ='" & txtLevel.Text & "' union all " &
-                "select NoneEssentialID as fID, 'None Essential' as Type,fees from tblnonessentialfees where yearlevel ='" & txtLevel.Text & "'"
-                fillGrid(sql, DGV)
-
-                For Each row As DataGridViewRow In DGV.Rows
-                    sql = "INSERT INTO tblfeesTrans (feesID, feesType, amount, yearlevel,studid ) " _
-                       & " VALUES ('" & row.Cells("fID").Value & "','" & row.Cells("Type").Value & "','" & row.Cells("amount").Value & "','" & txtLevel.Text & "','" & id & "')"
-                    create(sql)
-                Next
 
 
 
